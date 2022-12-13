@@ -38,6 +38,8 @@ pip install pip-tools
 pip-compile requirements.in > requirements.txt
 ```
 
+or run `bash pip_compile.sh`.
+
 ## Build container
 
 Build container from parent directory (`docker/jupyterlab`) with
