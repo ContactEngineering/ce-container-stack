@@ -33,7 +33,7 @@ RUN apt-get --yes update && \
 
 # Workaround for building packages and introducing an ipykernel outside of the jupyterlab conda environment
 RUN PATH=$(echo "$PATH" | sed -e 's|/opt/conda[^:]*:||g') && ( \
-        pip install meson ninja && \
+        pup install --upgrade pip && \
         pip install SurfaceTopography && \
         pip install ipykernel && \
         python3 -m ipykernel install --name SurfaceTopography --display-name "Python (SurfaceTopography)") && \
