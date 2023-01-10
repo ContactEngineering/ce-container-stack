@@ -2,6 +2,7 @@ click
 pep517
 tomli
 adhesion
+adjustText
 ase
 asgiref
 contactmechanics
@@ -33,4 +34,6 @@ PyYAML
 scipy
 scikit-learn
 seaborn
+snakemake
+surfacetopography
 git+https://github.com/IMTEK-Simulation/code-snippets.git
