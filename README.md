@@ -4,7 +4,7 @@ A collection of container recipes around the ContactEngineering ecosystem and th
 
 ## jupyterlab-SurfaceTopography
 
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/imteksim/jupyterlab-surfacetopography?label=dockerhub)](https://hub.docker.com/repository/docker/imteksim/jupyterlab-surfacetopography) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ContactEngineering/ce-container-stack/build-and-test)](https://github.com/ContactEngineering/ce-container-stack/actions?query=workflow%3Abuild-and-test)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/imteksim/jupyterlab-surfacetopography?label=dockerhub)](https://hub.docker.com/repository/docker/imteksim/jupyterlab-surfacetopography) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ContactEngineering/ce-container-stack/build-and-test.yml?branch=master)](https://github.com/ContactEngineering/ce-container-stack/actions?query=workflow%3Abuild-and-test)
 
 This docker image bases on the [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 and provides the core `SurfaceTopography` package and a few other satellite packages from the 
