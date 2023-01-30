@@ -50,7 +50,7 @@ jobs:
 
     # build image locally, push to dockerhub if tagged
     - name: Build
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: ./docker
         file: ./docker/jupyterlab-SurfaceTopography/Dockerfile
