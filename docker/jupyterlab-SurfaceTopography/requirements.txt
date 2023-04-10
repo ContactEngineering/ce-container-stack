@@ -6,9 +6,9 @@
 #
 adhesion==0.91.0
     # via -r requirements.in
-adjusttext==0.7.3
+adjusttext==0.8
     # via -r requirements.in
-aiohttp==3.8.3
+aiohttp==3.8.4
     # via dtool-lookup-api
 aiosignal==1.3.1
     # via aiohttp
@@ -30,16 +30,15 @@ attrs==22.2.0
     # via
     #   aiohttp
     #   jsonschema
-    #   pytest
 backcall==0.2.0
     # via ipython
 bcrypt==4.0.1
     # via paramiko
-biopython==1.80
+biopython==1.81
     # via mdanalysis
-boto3==1.26.48
+boto3==1.26.109
     # via dtool-s3
-botocore==1.29.48
+botocore==1.29.109
     # via
     #   boto3
     #   s3transfer
@@ -51,7 +50,7 @@ cffi==1.15.1
     #   pynacl
 cftime==1.6.2
     # via netcdf4
-charset-normalizer==2.1.1
+charset-normalizer==3.1.0
     # via
     #   aiohttp
     #   requests
@@ -70,21 +69,19 @@ click==8.1.3
     #   flask
 click-plugins==1.1.1
     # via dtool-cli
-comm==0.1.2
+comm==0.1.3
     # via ipykernel
-commonmark==0.9.1
-    # via rich
 configargparse==1.5.3
     # via snakemake
 connection-pool==0.0.3
     # via snakemake
-contactmechanics==1.1.0
+contactmechanics==1.1.1
     # via
     #   -r requirements.in
     #   adhesion
-contourpy==1.0.6
+contourpy==1.0.7
     # via matplotlib
-cryptography==39.0.0
+cryptography==40.0.1
     # via paramiko
 cycler==0.11.0
     # via
@@ -92,7 +89,7 @@ cycler==0.11.0
     #   matplotlib
 datrie==0.8.2
     # via snakemake
-debugpy==1.6.5
+debugpy==1.6.7
     # via ipykernel
 decorator==5.1.1
     # via ipython
@@ -100,11 +97,11 @@ defusedxml==0.7.1
     # via surfacetopography
 dill==0.3.6
     # via imteksimfw
-dnspython==2.2.1
+dnspython==2.3.0
     # via pymongo
 docutils==0.19
     # via snakemake
-dpath==2.1.4
+dpath==2.1.5
     # via yte
 dtool==3.26.2
     # via -r requirements.in
@@ -160,27 +157,25 @@ dtoolcore==3.18.2
     #   dtool-s3
     #   dtool-symlink
     #   dtool-tag
-entrypoints==0.4
-    # via jupyter-client
 et-xmlfile==1.1.0
     # via openpyxl
-exceptiongroup==1.1.0
+exceptiongroup==1.1.1
     # via pytest
 executing==1.2.0
     # via stack-data
 fasteners==0.18
     # via mdanalysis
-fastjsonschema==2.16.2
+fastjsonschema==2.16.3
     # via nbformat
 fireworks==2.0.3
     # via imteksimfw
-flask==2.2.2
+flask==2.2.3
     # via
     #   fireworks
     #   flask-paginate
 flask-paginate==2022.1.8
     # via fireworks
-fonttools==4.38.0
+fonttools==4.39.3
     # via matplotlib
 frozenlist==1.3.3
     # via
@@ -188,46 +183,52 @@ frozenlist==1.3.3
     #   aiosignal
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.30
+gitpython==3.1.31
     # via snakemake
 griddataformats==1.0.1
     # via mdanalysis
 gromacs==0.0.0
     # via -r requirements.in
-gromacswrapper==0.8.2
+gromacswrapper==0.8.4
     # via -r requirements.in
-gsd==2.7.0
+gsd==2.8.0
     # via mdanalysis
 gunicorn==20.1.0
     # via fireworks
-h5py==3.7.0
+h5py==3.8.0
     # via
     #   muspectre
     #   surfacetopography
+humanfriendly==10.0
+    # via snakemake
 idna==3.4
     # via
     #   requests
     #   yarl
-igor==0.3
+igor2==0.5.2
     # via surfacetopography
-importlib-metadata==6.0.0
-    # via flask
-importlib-resources==5.10.2
-    # via jsonschema
+importlib-metadata==6.3.0
+    # via
+    #   flask
+    #   jupyter-client
+importlib-resources==5.12.0
+    # via
+    #   jsonschema
+    #   matplotlib
 imteksimcs @ git+https://github.com/IMTEK-Simulation/code-snippets.git
     # via -r requirements.in
 imteksimfw==0.5.1
     # via -r requirements.in
 iniconfig==2.0.0
     # via pytest
-ipykernel==6.20.1
+ipykernel==6.22.0
     # via ipywidgets
-ipython==8.8.0
+ipython==8.12.0
     # via
     #   -r requirements.in
     #   ipykernel
     #   ipywidgets
-ipywidgets==8.0.4
+ipywidgets==8.0.6
     # via
     #   -r requirements.in
     #   nglview
@@ -258,23 +259,26 @@ jsonschema==4.17.3
     # via
     #   nbformat
     #   snakemake
-jupyter-client==7.4.8
+jupyter-client==8.1.0
     # via ipykernel
-jupyter-core==5.1.3
+jupyter-core==5.3.0
     # via
+    #   ipykernel
     #   jupyter-client
     #   nbformat
-jupyterlab-widgets==3.0.5
+jupyterlab-widgets==3.0.7
     # via
     #   ipywidgets
     #   nglview
 kiwisolver==1.4.4
     # via matplotlib
-markupsafe==2.1.1
+markdown-it-py==2.2.0
+    # via rich
+markupsafe==2.1.2
     # via
     #   jinja2
     #   werkzeug
-matplotlib==3.6.3
+matplotlib==3.7.1
     # via
     #   -r requirements.in
     #   adjusttext
@@ -287,46 +291,46 @@ matplotlib-inline==0.1.6
     # via
     #   ipykernel
     #   ipython
-mdanalysis==2.4.2
+mdanalysis==2.4.3
     # via -r requirements.in
+mdurl==0.1.2
+    # via markdown-it-py
 meshio==5.3.4
     # via muspectre
 miniball==1.1.0
     # via -r requirements.in
 mmtf-python==1.1.3
     # via mdanalysis
-monty==2022.9.9
+monty==2023.4.10
     # via
     #   fireworks
     #   imteksimfw
 mrcfile==1.4.3
     # via griddataformats
-msgpack==1.0.4
+msgpack==1.0.5
     # via mmtf-python
 multidict==6.0.4
     # via
     #   aiohttp
     #   yarl
-muspectre==0.25.1
+muspectre==0.26.0
     # via
     #   adhesion
     #   contactmechanics
     #   surfacetopography
-nbformat==5.7.2
+nbformat==5.8.0
     # via snakemake
 nest-asyncio==1.5.6
-    # via
-    #   ipykernel
-    #   jupyter-client
-netcdf4==1.6.2
+    # via ipykernel
+netcdf4==1.6.3
     # via
     #   adhesion
     #   contactmechanics
-networkx==3.0
+networkx==3.1
     # via mdanalysis
 nglview==3.0.3
     # via -r requirements.in
-numkit==1.2.2
+numkit==1.2.3
     # via gromacswrapper
 numpi==0.3.1
     # via
@@ -347,6 +351,7 @@ numpy==1.23.5
     #   gromacswrapper
     #   gsd
     #   h5py
+    #   igor2
     #   imteksimcs
     #   matplotlib
     #   mdanalysis
@@ -369,7 +374,7 @@ numpy==1.23.5
     #   uvw
 numpyencoder==0.3.0
     # via surfacetopography
-openpyxl==3.0.10
+openpyxl==3.1.2
     # via
     #   -r requirements.in
     #   surfacetopography
@@ -382,7 +387,7 @@ packaging==23.0
     #   matplotlib
     #   mdanalysis
     #   pytest
-pandas==1.5.2
+pandas==2.0.0
     # via
     #   -r requirements.in
     #   imteksimcs
@@ -390,9 +395,9 @@ pandas==1.5.2
     #   seaborn
 panedr==0.7.1
     # via -r requirements.in
-paramiko==2.12.0
+paramiko==3.1.0
     # via imteksimfw
-parmed==3.4.3
+parmed==4.1.0
     # via -r requirements.in
 parse==1.19.0
     # via dtool-overlay
@@ -408,7 +413,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==9.4.0
+pillow==9.5.0
     # via
     #   matplotlib
     #   surfacetopography
@@ -416,11 +421,11 @@ pkgutil-resolve-name==1.3.10
     # via jsonschema
 plac==1.3.5
     # via yte
-platformdirs==2.6.2
+platformdirs==3.2.0
     # via jupyter-core
 pluggy==1.0.0
     # via pytest
-prompt-toolkit==3.0.36
+prompt-toolkit==3.0.38
     # via ipython
 psutil==5.9.4
     # via
@@ -436,7 +441,7 @@ pycparser==2.21
     # via cffi
 pyedr==0.7.1
     # via panedr
-pygments==2.14.0
+pygments==2.15.0
     # via
     #   dtool-info
     #   ipython
@@ -455,7 +460,7 @@ pyside2==5.15.2.1
     # via
     #   -r requirements.in
     #   ovito
-pytest==7.2.0
+pytest==7.3.0
     # via -r requirements.in
 python-dateutil==2.8.2
     # via
@@ -466,7 +471,7 @@ python-dateutil==2.8.2
     #   matplotlib
     #   pandas
     #   surfacetopography
-pytz==2022.7
+pytz==2023.3
     # via pandas
 pyyaml==6.0
     # via
@@ -475,18 +480,18 @@ pyyaml==6.0
     #   snakemake
     #   surfacetopography
     #   yte
-pyzmq==24.0.1
+pyzmq==25.0.2
     # via
     #   ipykernel
     #   jupyter-client
-requests==2.28.1
+requests==2.28.2
     # via
     #   dtool-http
     #   snakemake
     #   surfacetopography
 reretry==0.11.8
     # via snakemake
-rich==13.0.1
+rich==13.3.3
     # via meshio
 ruamel-yaml==0.17.21
     # via
@@ -497,9 +502,9 @@ ruamel-yaml-clib==0.2.7
     # via ruamel-yaml
 s3transfer==0.6.0
     # via boto3
-scikit-learn==1.2.0
+scikit-learn==1.2.2
     # via -r requirements.in
-scipy==1.10.0
+scipy==1.10.1
     # via
     #   -r requirements.in
     #   adhesion
@@ -523,19 +528,18 @@ six==1.16.0
     #   gromacswrapper
     #   imteksimfw
     #   numkit
-    #   paramiko
     #   python-dateutil
 smart-open==6.3.0
     # via snakemake
 smmap==5.0.0
     # via gitdb
-snakemake==7.19.1
+snakemake==7.25.0
     # via -r requirements.in
 stack-data==0.6.2
     # via ipython
 stopit==1.1.2
     # via snakemake
-surfacetopography==1.3.0
+surfacetopography==1.6.0
     # via
     #   -r requirements.in
     #   adhesion
@@ -550,7 +554,7 @@ threadpoolctl==3.1.0
     #   scikit-learn
 throttler==1.2.2
     # via snakemake
-tifffile==2022.10.10
+tifffile==2023.3.21
     # via tiffile
 tiffile==2018.10.18
     # via surfacetopography
@@ -559,18 +563,18 @@ tomli==2.0.1
     #   -r requirements.in
     #   pep517
     #   pytest
-toposort==1.9
+toposort==1.10
     # via snakemake
 tornado==6.2
     # via
     #   ipykernel
     #   jupyter-client
-tqdm==4.64.1
+tqdm==4.65.0
     # via
     #   fireworks
     #   mdanalysis
     #   pyedr
-traitlets==5.8.1
+traitlets==5.9.0
     # via
     #   comm
     #   ipykernel
@@ -580,27 +584,31 @@ traitlets==5.8.1
     #   jupyter-core
     #   matplotlib-inline
     #   nbformat
-typing-extensions==4.4.0
-    # via rich
-urllib3==1.26.14
+typing-extensions==4.5.0
+    # via
+    #   ipython
+    #   rich
+tzdata==2023.3
+    # via pandas
+urllib3==1.26.15
     # via
     #   botocore
     #   requests
 uvw==0.5.0
     # via muspectre
-wcwidth==0.2.5
+wcwidth==0.2.6
     # via prompt-toolkit
-werkzeug==2.2.2
+werkzeug==2.2.3
     # via flask
-widgetsnbextension==4.0.5
+widgetsnbextension==4.0.7
     # via ipywidgets
-wrapt==1.14.1
+wrapt==1.15.0
     # via snakemake
 yarl==1.8.2
     # via aiohttp
 yte==1.5.1
     # via snakemake
-zipp==3.11.0
+zipp==3.15.0
     # via
     #   importlib-metadata
     #   importlib-resources
