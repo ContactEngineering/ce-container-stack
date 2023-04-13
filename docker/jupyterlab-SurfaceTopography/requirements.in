@@ -23,7 +23,7 @@ miniball
 nglview
 numpy
 openpyxl
-ovito<=3.6.0
+ovito<=3.8.2
 pandas
 panedr
 ParmEd
