@@ -60,4 +60,11 @@ RUN apt-get --yes update && \
 WORKDIR /home/${NB_USER}/work
 USER ${NB_UID}
 
+# Remove annyoing conda environment from terminal sessions
+RUN echo "conda deactivate" >> "${HOME}/.bashrc"
+RUN echo 'export PATH=$(echo "$PATH" | sed -e '"'"'s|/opt/conda[^:]*:||g'"'"')' >> "${HOME}/.bashrc"
+
+# Set default kernel
+RUN echo "c.MultiKernelManager.default_kernel_name = 'surfacetopography'" >> "${HOME}/.jupyter/jupyter_server_config.py"
+
 CMD ["start-wrapper.sh", "start-notebook.sh"]

@@ -1,6 +1,6 @@
 # jupyterlab-SurfaceTopography
 
-This container recipe provides the core `SurfaceTopography` package and a few other satellite packages from the 
+This container provides the core `SurfaceTopography` package and a few other satellite packages from the 
 `ContactEngineering` ecosystem.
 
 ## Changes to the container
@@ -22,6 +22,8 @@ breaking out of the default conda enviornment in the shell
 * removing any conda-related artifacts from the `$PATH`, i.e. with `export PATH=$(echo "$PATH" | sed -e 's|/opt/conda[^:]*:||g')`
 
 The latter is necessary to avoid conda compiler interfering with custom build steps when compiling against system libraries.
+
+The default user's `.bashrc` executes these two commands by default.
 
 ## Python requirements
 
