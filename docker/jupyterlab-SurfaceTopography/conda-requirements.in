@@ -1,2 +1,5 @@
 jupyterlab_autorun_cells
 jupytext
+jupyterlab-tour
+jupyter-app-launcher
+md2nb

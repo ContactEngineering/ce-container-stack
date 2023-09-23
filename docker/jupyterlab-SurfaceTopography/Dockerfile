@@ -1,16 +1,9 @@
 # Build from within repository root 
 #
 # Modify conda enviornment running jupyter notebooks
-FROM jupyter/minimal-notebook:latest
+FROM jupyter/minimal-notebook:python-3.11.5
 
 USER root
-
-COPY --chown=${NB_UID}:${NB_GID} jupyterlab-SurfaceTopography/conda-requirements.in "/home/${NB_USER}/"
-RUN pip install pip-tools
-RUN pip-compile "/home/${NB_USER}/conda-requirements.in" > "/home/${NB_USER}/conda-requirements.txt"
-RUN pip install --quiet --no-cache-dir --requirement "/home/${NB_USER}/conda-requirements.txt" && \
-    fix-permissions "${CONDA_DIR}" && \
-    fix-permissions "/home/${NB_USER}"
 
 # FROM imkteksim/dtool-jupyter:latest
 # Install from requirements.txt file
@@ -30,6 +23,13 @@ RUN apt-get --yes update && \
         python3-netcdf4 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY --chown=${NB_UID}:${NB_GID} jupyterlab-SurfaceTopography/conda-requirements.in "/home/${NB_USER}/"
+RUN pip install pip-tools
+RUN pip-compile "/home/${NB_USER}/conda-requirements.in" > "/home/${NB_USER}/conda-requirements.txt"
+RUN pip install --quiet --no-cache-dir --requirement "/home/${NB_USER}/conda-requirements.txt" && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
 
 # Workaround for building packages and introducing an ipykernel outside of the jupyterlab conda environment
 RUN PATH=$(echo "$PATH" | sed -e 's|/opt/conda[^:]*:||g') && ( \
@@ -60,11 +60,20 @@ RUN apt-get --yes update && \
 WORKDIR /home/${NB_USER}/work
 USER ${NB_UID}
 
-# Remove annyoing conda environment from terminal sessions
+# Remove annoying conda environment from terminal sessions
 RUN echo "conda deactivate" >> "${HOME}/.bashrc"
 RUN echo 'export PATH=$(echo "$PATH" | sed -e '"'"'s|/opt/conda[^:]*:||g'"'"')' >> "${HOME}/.bashrc"
 
 # Set default kernel
 RUN echo "c.MultiKernelManager.default_kernel_name = 'surfacetopography'" >> "${HOME}/.jupyter/jupyter_server_config.py"
+
+# Copy jupyter-app-launcher configuration
+ENV JUPYTER_APP_LAUNCHER_PATH="/home/${NB_USER}/.jupyter/jupyter_app_launcher"
+COPY --chown=${NB_UID}:${NB_GID} jupyterlab-SurfaceTopography/etc/jupyter_app_launcher "/home/${NB_USER}/.jupyter/jupyter_app_launcher"
+
+# Copy README.md
+COPY --chown=${NB_UID}:${NB_GID} jupyterlab-SurfaceTopography/README.md "/home/${NB_USER}/README.md"
+RUN pandoc "/home/${NB_USER}/README.md" -o "/home/${NB_USER}/README.html"
+RUN md2nb "/home/${NB_USER}/README.md"
 
 CMD ["start-wrapper.sh", "start-notebook.sh"]
