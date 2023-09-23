@@ -1,7 +1,8 @@
 - title: README
-  description: jupyterlab-SurfaceTopography container README.md
-  source: ../../README.md
-  type: markdown
+  description: jupyterlab-SurfaceTopography container README
+  source: ../../README.ipynb
+  cwd: ../../
+  type: notebook
   catalog: Help
 
 - title: SurfaceTopography docs
