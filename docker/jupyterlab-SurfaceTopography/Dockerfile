@@ -1,7 +1,7 @@
 # Build from within repository root 
 #
 # Modify conda enviornment running jupyter notebooks
-FROM jupyter/minimal-notebook:latest
+FROM jupyter/minimal-notebook:python-3.11.5
 
 USER root
 
@@ -57,14 +57,22 @@ RUN apt-get --yes update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN pip --quiet --no-cache-dir install -e "/home/${NB_USER}/juptyerlab_surfacetopography_docs" && \
+    jupyter labextension develop --overwrite "/home/${NB_USER}/juptyerlab_surfacetopography_docs" && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
+
 WORKDIR /home/${NB_USER}/work
 USER ${NB_UID}
 
-# Remove annyoing conda environment from terminal sessions
+# Remove annoying conda environment from terminal sessions
 RUN echo "conda deactivate" >> "${HOME}/.bashrc"
 RUN echo 'export PATH=$(echo "$PATH" | sed -e '"'"'s|/opt/conda[^:]*:||g'"'"')' >> "${HOME}/.bashrc"
 
 # Set default kernel
 RUN echo "c.MultiKernelManager.default_kernel_name = 'surfacetopography'" >> "${HOME}/.jupyter/jupyter_server_config.py"
+
+# Copy jupyter-app-launcher configuration
+COPY --chown=${NB_UID}:${NB_GID} jupyterlab-SurfaceTopography/etc/jupyter_app_launcher "/home/${NB_USER}/.jupyter/jupyter_app_launcher"
 
 CMD ["start-wrapper.sh", "start-notebook.sh"]

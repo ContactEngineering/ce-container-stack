@@ -1,0 +1,13 @@
+- title: README
+  description: jupyterlab-SurfaceTopography container README.md 
+  source: ../../README.md
+  type: markdown
+  catalog: Help
+
+- title: SurfaceTopography docs
+  description: SurfaceTopography documentation
+  source: https://contactengineering.github.io/SurfaceTopography/
+  type: url
+  catalog: Help
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
